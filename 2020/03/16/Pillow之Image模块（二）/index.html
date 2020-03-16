@@ -1,71 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
+
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    Pillow之Image模块（二） |
-    
-    Hexo</title>
-  
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="赵鹏">
+  <meta name="keywords" content="">
+  <title>Image模块中的函数 - 欢迎来到我的世界</title>
 
-  
-<link rel="stylesheet" href="/css/technology.css">
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css" />
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
 
-  
-  
-<script src="/js/pace.min.js"></script>
+
+
+  <link  rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css" />
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+<!-- 自定义样式保持在最底部 -->
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <section class="outer">
-  <article id="post-Pillow之Image模块（二）" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>欢迎来到我的世界</strong>&nbsp;</a>
 
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-  
-    <h1 class="article-title" itemprop="name">
-      Pillow之Image模块（二）
-    </h1>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%8C%EF%BC%89/" class="article-date">
-  <time datetime="2020-03-16T03:25:16.661Z" itemprop="datePublished">2020-03-16</time>
-</a>
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
         
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期一, 三月 16日 2020, 11:25 上午
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    1.3k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      5 分钟
+                  </span>
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  <span id="busuanzi_container_page_pv" class="post-meta" style="display: none">
+                    <i class="far fa-eye" aria-hidden="true"></i>
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
       </div>
+    </div>
+  </header>
+
+  <main>
     
-
-    <div class="article-entry" itemprop="articleBody">
       
 
-      
-
-      
-        <h1 id="Image模块中的函数"><a href="#Image模块中的函数" class="headerlink" title="Image模块中的函数"></a>Image模块中的函数</h1><p>Image模块中函数的返回值皆是一个Image对象，因而可以通过该模块中的函数来创建Image类的实例。</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <div class="markdown-body">
+              <h1 id="Image模块中的函数"><a href="#Image模块中的函数" class="headerlink" title="Image模块中的函数"></a>Image模块中的函数</h1><p>Image模块中函数的返回值皆是一个Image对象，因而可以通过该模块中的函数来创建Image类的实例。</p>
 <hr>
-<h1 id="1-open"><a href="#1-open" class="headerlink" title="1.open"></a>1.open</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.open(file, mode)</span><br></pre></td></tr></table></figure>
+<h1 id="1-open"><a href="#1-open" class="headerlink" title="1.open"></a>1.open</h1><pre><code class="python">Image.open(file, mode)</code></pre>
 <ul>
 <li><p><strong>file</strong>     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;       图像文件的全路径</p>
 <ul>
@@ -77,10 +190,15 @@
 </ul>
 <p><strong>说明</strong>：创建了Image类的实例后，便可以通过类的方法<code>show()</code>来显示图像。</p>
 <p><strong>示例：</strong> <em>打开图像并显示</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#导入Image模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image  </span><br><span class="line"><span class="comment">#打开名为‘image.jpg’的图像             </span></span><br><span class="line">img = Image.open(<span class="string">'image.jpg'</span>)        </span><br><span class="line"><span class="comment">#显示</span></span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
-<p><strong>运行结果：</strong><br>调用图片查看器，打开了该文件目录下的名为”image.jpg”的图像。<br><img src="https://img-blog.csdnimg.cn/20200210095235326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="python"> #导入Image模块
+from PIL import Image  
+#打开名为‘image.jpg’的图像             
+img = Image.open(&#39;image.jpg&#39;)        
+#显示
+img.show()                           </code></pre>
+<p><strong>运行结果：</strong><br>调用图片查看器，打开了该文件目录下的名为”image.jpg”的图像。<br><img src="https://img-blog.csdnimg.cn/20200210095235326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
 <hr>
-<h1 id="2-new"><a href="#2-new" class="headerlink" title="2.new"></a>2.new</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.new(mode, size, color=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="2-new"><a href="#2-new" class="headerlink" title="2.new"></a>2.new</h1><pre><code class="python">Image.new(mode, size, color=0)</code></pre>
 <ul>
 <li><strong>mode</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 所要创建的图像模式（RGB、RGBA等）</li>
 <li><strong>size</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;所要创建的图像尺寸</li>
@@ -89,10 +207,17 @@
 </ul>
 <p><strong>功能：</strong>创建一张模式为<strong>mode</strong>，尺寸大小为<strong>size</strong>，颜色为<strong>color</strong>的图像。</p>
 <p><strong>示例：</strong> <em>创建模式为RGB，分辨率为400x200，颜色为红色的图像</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入Image模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment">#创建模式为RGB，分辨率为400x200，颜色为红色的图像</span></span><br><span class="line">img_1 = Image.new(<span class="string">'RGB'</span>,(<span class="number">400</span>,<span class="number">200</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>))  <span class="comment">#颜色利用元组确定</span></span><br><span class="line">img_2 = Image.new(<span class="string">'RGB'</span>,(<span class="number">400</span>,<span class="number">200</span>),<span class="string">'red'</span>)      <span class="comment">#颜色利用ImageColor模块里颜色字符确定</span></span><br><span class="line"><span class="comment"># 显示图像</span></span><br><span class="line">img_1.show()</span><br><span class="line">img_2.show()</span><br></pre></td></tr></table></figure>
-<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/2020020913005771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="python">#导入Image模块
+from PIL import Image
+#创建模式为RGB，分辨率为400x200，颜色为红色的图像
+img_1 = Image.new(&#39;RGB&#39;,(400,200),(255,0,0))  #颜色利用元组确定
+img_2 = Image.new(&#39;RGB&#39;,(400,200),&#39;red&#39;)      #颜色利用ImageColor模块里颜色字符确定
+# 显示图像
+img_1.show()
+img_2.show()</code></pre>
+<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/2020020913005771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
 <hr>
-<h1 id="3-blend"><a href="#3-blend" class="headerlink" title="3.blend"></a>3.blend</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.blend(im1, im2, alpha)</span><br></pre></td></tr></table></figure>
+<h1 id="3-blend"><a href="#3-blend" class="headerlink" title="3.blend"></a>3.blend</h1><pre><code class="python">Image.blend(im1, im2, alpha)</code></pre>
 <ul>
 <li><strong>im1</strong> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;参与混合的图像1，混合过程中透明度设置为 <em>(1-apha)</em></li>
 <li><strong>im2</strong> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;参与混合的图像2，混合过程中透明度设置为 <em>(apha)</em></li>
@@ -105,11 +230,24 @@
 <li>当alpha为1，返回im2图像的副本</li>
 </ul>
 <p><strong>示例</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入Image模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment">#打开图像im1</span></span><br><span class="line">im1 = Image.open(<span class="string">'im1.png'</span>)</span><br><span class="line"><span class="comment">#打开图像im2</span></span><br><span class="line">im2 = Image.open(<span class="string">'im2.png'</span>)</span><br><span class="line"><span class="comment">#以alpha=0混合该两张图像，得到的是im1原图像</span></span><br><span class="line">img0 = Image.blend(im1,im2,<span class="number">0</span>)</span><br><span class="line">img0.show()</span><br><span class="line"><span class="comment">#以alpha=1混合该两张图像，得到的是im2原图像</span></span><br><span class="line">img1 = Image.blend(im1,im2,<span class="number">1</span>)</span><br><span class="line">img1.show()</span><br><span class="line"><span class="comment">#以alpha=0.5混合该两张图像，得到一个新的图像对象img</span></span><br><span class="line">img = Image.blend(im1,im2,<span class="number">0.5</span>)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209135553956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="python">#导入Image模块
+from PIL import Image
+#打开图像im1
+im1 = Image.open(&#39;im1.png&#39;)
+#打开图像im2
+im2 = Image.open(&#39;im2.png&#39;)
+#以alpha=0混合该两张图像，得到的是im1原图像
+img0 = Image.blend(im1,im2,0)
+img0.show()
+#以alpha=1混合该两张图像，得到的是im2原图像
+img1 = Image.blend(im1,im2,1)
+img1.show()
+#以alpha=0.5混合该两张图像，得到一个新的图像对象img
+img = Image.blend(im1,im2,0.5)
+img.show()</code></pre>
+<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209135553956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
 <hr>
-<h1 id="4-composite"><a href="#4-composite" class="headerlink" title="4.composite"></a>4.composite</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.composite(im1, im2, mask)</span><br></pre></td></tr></table></figure>
+<h1 id="4-composite"><a href="#4-composite" class="headerlink" title="4.composite"></a>4.composite</h1><pre><code class="python">Image.composite(im1, im2, mask)</code></pre>
 <ul>
 <li><strong>im1</strong> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;参与混合的图像1</li>
 <li><strong>im2</strong> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;参与混合的图像2</li>
@@ -118,96 +256,389 @@
 </ul>
 <p><strong>功能：</strong>使用<strong>mask</strong>混合<strong>im1</strong>和<strong>im2</strong>;，作为<strong>mask</strong>的图像模式可以是“<code>1</code>”、“<code>L</code>”、“<code>RGBA</code>”（它们mode和size必须相同，且mask应具有一定的透明度）。</p>
 <p><strong>示例</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入Image模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment">#打开图像im1</span></span><br><span class="line">im1 = Image.open(<span class="string">'im1.png'</span>)</span><br><span class="line"><span class="comment">#打开图像im2</span></span><br><span class="line">im2 = Image.open(<span class="string">'im2.png'</span>)</span><br><span class="line"><span class="comment">#打开图像im3</span></span><br><span class="line">mask = Image.open(<span class="string">'im3.png'</span>)</span><br><span class="line"><span class="comment">#将图像im3作为mask来混合im1和im2</span></span><br><span class="line">img = Image.composite(im1,im2,mask)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
-<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209175347984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="python">#导入Image模块
+from PIL import Image
+#打开图像im1
+im1 = Image.open(&#39;im1.png&#39;)
+#打开图像im2
+im2 = Image.open(&#39;im2.png&#39;)
+#打开图像im3
+mask = Image.open(&#39;im3.png&#39;)
+#将图像im3作为mask来混合im1和im2
+img = Image.composite(im1,im2,mask)
+img.show()</code></pre>
+<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209175347984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
 <p><strong>说明：</strong>该函数关键在于图像的选择，作为mask的图像必须要是透明的，否则运行过后看不出效果。</p>
 <hr>
-<h1 id="5-eval"><a href="#5-eval" class="headerlink" title="5.eval"></a>5.eval</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.eval(image, function)</span><br></pre></td></tr></table></figure>
+<h1 id="5-eval"><a href="#5-eval" class="headerlink" title="5.eval"></a>5.eval</h1><pre><code class="python">Image.eval(image, function)</code></pre>
 <ul>
 <li><strong>image</strong>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 输入的图像</li>
 <li><strong>function</strong> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 给输入图像的每个像素应用该函数</li>
 <li><strong>returns</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;一个<em>Image</em>对象</li>
 </ul>
 <p><strong>功能：</strong><br>&emsp;&emsp;使用变量<strong>function</strong>对应的函数（该函数只允许接收一个整数类型参数）处理变量<strong>image</strong>所代表图像中的每一个像素点，如果变量<strong>image</strong>所代表图像有多个通道，那变量<strong>function</strong>对应的函数作用于每一个通道。<br><strong>示例</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入Image模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment">#打开image.jpg图像</span></span><br><span class="line">img = Image.open(<span class="string">'image.jpg'</span>)</span><br><span class="line"><span class="comment"># 定义一个函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x*<span class="number">2</span></span><br><span class="line"><span class="comment"># 对图像im每个像素点进行func中的操作</span></span><br><span class="line">img_new = Image.eval(img, func)</span><br><span class="line">img_new.show()</span><br></pre></td></tr></table></figure>
-<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209194539972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="python">#导入Image模块
+from PIL import Image
+#打开image.jpg图像
+img = Image.open(&#39;image.jpg&#39;)
+# 定义一个函数
+def func(x):
+    return x*2
+# 对图像im每个像素点进行func中的操作
+img_new = Image.eval(img, func)
+img_new.show()</code></pre>
+<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209194539972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
 <hr>
-<h1 id="6-merge"><a href="#6-merge" class="headerlink" title="6.merge"></a>6.merge</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.merge(mode, bands)</span><br></pre></td></tr></table></figure>
+<h1 id="6-merge"><a href="#6-merge" class="headerlink" title="6.merge"></a>6.merge</h1><pre><code class="python">Image.merge(mode, bands)</code></pre>
 <ul>
 <li><strong>mode</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;输出图像的模式</li>
 <li><strong>bands</strong> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  一个图像的元组或者列表，包含输出图像中每个波段的一个单一波段图像，所有通道都必须同样大小</li>
 <li><strong>returns</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;一个<em>Image</em>对象</li>
 </ul>
 <p><strong>示例</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入模块Image</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment">#打开图像im1和im2</span></span><br><span class="line">im1 = Image.open(<span class="string">"im1.png"</span>)</span><br><span class="line">im2 = Image.open(<span class="string">"im2.png"</span>)</span><br><span class="line"><span class="comment">#将图像im1和im2通道分离</span></span><br><span class="line">r1,g1,b1,a1 = im1.split()</span><br><span class="line">r2,g2,b2,a2 = im2.split()</span><br><span class="line"><span class="comment">#合成新的图像</span></span><br><span class="line">im_merge = Image.merge(<span class="string">"RGB"</span>,[r1,g2,b2])</span><br><span class="line">im_merge.save(<span class="string">"img_new.png"</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209202427655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code class="python">#导入模块Image
+from PIL import Image
+#打开图像im1和im2
+im1 = Image.open(&quot;im1.png&quot;)
+im2 = Image.open(&quot;im2.png&quot;)
+#将图像im1和im2通道分离
+r1,g1,b1,a1 = im1.split()
+r2,g2,b2,a2 = im2.split()
+#合成新的图像
+im_merge = Image.merge(&quot;RGB&quot;,[r1,g2,b2])
+im_merge.save(&quot;img_new.png&quot;)</code></pre>
+<p><strong>运行结果：</strong><br><img src="https://img-blog.csdnimg.cn/20200209202427655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MTUzNQ==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%8C%EF%BC%89/" data-id="ck7tx5shb0000pku5eb3l70j1"
-         class="article-share-link">分享</a>
-      
-    </footer>
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Pillow/">Pillow</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-12 col-md-6">
+                    
+                      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%89%EF%BC%89/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span>Image类方法</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-12 col-md-6">
+                    
+                      <a href="/2020/03/16/%E6%B3%A8%E5%86%8C%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/">
+                        <span>注册谷歌账号</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
 
-  </div>
+              
+                <!-- Comments -->
+                <div class="comments" id="comments">
+                  
+                  
 
-  
-    
-  <nav class="article-nav">
-    
-      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%89%EF%BC%89/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Pillow之Image模块（三）
-          
+                </div>
+            
+          </div>
         </div>
-      </a>
-    
-    
-      <a href="/2020/03/16/%E6%B3%A8%E5%86%8C%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">注册谷歌账号</div>
-      </a>
-    
-  </nav>
-
-
-  
-
-  
-    
-  
-
-</article>
-
-
-
-</section>
+      </div>
     </div>
     
-<script src="/js/jquery-2.0.3.min.js"></script>
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
 
 
-<script src="/js/lazyload.min.js"></script>
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="/js/main.js" ></script>
 
 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+  <script  src="/js/lazyload.js" ></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
 
 
 
 
 
 
-<script src="/js/technology.js"></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
-  </div>
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Image模块中的函数&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+
+
+
+
+
 </body>
 </html>

@@ -1,119 +1,562 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
+
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    
-    Hexo</title>
-  
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="赵鹏">
+  <meta name="keywords" content="">
+  <title>欢迎来到我的世界</title>
 
-  
-<link rel="stylesheet" href="/css/technology.css">
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css" />
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
 
-  
-  
-<script src="/js/pace.min.js"></script>
+
+
+  <link  rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css" />
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+<!-- 自定义样式保持在最底部 -->
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <canvas id="canvas"></canvas>
-<div class="technology-body">
-    <div class="technology-frame">
-      <section>
-        <div></div>
-        <div></div>
-        <div></div>
-      </section>
-      <section>
-        <div></div>
-        <div></div>
-        <div></div>
-      </section>
-      <section>
-        <div></div>
-        <div></div>
-        <div></div>
-      </section>
-      <section>
-        <div></div>
-        <div></div>
-        <div></div>
-      </section>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>欢迎来到我的世界</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <section class="technology-circle">
-      <div class="wrap">
-        <div class="inner">
-          <div class="middle">
-            <div class="middle2">
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/zhuti.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/" target="_self">
+          <img src="/img/pillow3.jpg" srcset="/img/loading.gif" alt="Image类属性"
+               class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/">
+        <p class="h4 index-header">Image类属性</p>
+      </a>
+
+      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">﻿# Image类属性
+
+Image类中的属性表示了一张图像的基本信息，现将其主要属性总结如下：
+
+
+format  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图像的文件格式
+
+size&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图像的大小(单位为像素)，形如(宽度，高度)的2元组
+
+width&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图像宽度（单位为像素）
+
+height&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;图像高度（</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-16&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Python/">Python</a>&nbsp;
+          
+            <a href="/tags/Pillow/">Pillow</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%89%EF%BC%89/" target="_self">
+          <img src="/img/pillow2.jpg" srcset="/img/loading.gif" alt="Image类方法"
+               class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%89%EF%BC%89/">
+        <p class="h4 index-header">Image类方法</p>
+      </a>
+
+      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%89%EF%BC%89/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Image类方法​        首先需要创建Image类的对象，进而调用Image类中方法。创建实例可以采用Image模块中的函数(open、new、blend等），该篇为简单起见，通过img = Image.open(&#39;***.jpg&#39;)来创建，此时，img为一个Image对象。
+
+1.convertimg.convert(mode=None, matrix=None, dither=None, palette=WEB, colors=256)
+
+mode&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ==请求的</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-16&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Python/">Python</a>&nbsp;
+          
+            <a href="/tags/Pillow/">Pillow</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">
+          <img src="/img/pillow.jpg" srcset="/img/loading.gif" alt="Image模块中的函数"
+               class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%8C%EF%BC%89/">
+        <p class="h4 index-header">Image模块中的函数</p>
+      </a>
+
+      <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%8C%EF%BC%89/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Image模块中的函数Image模块中函数的返回值皆是一个Image对象，因而可以通过该模块中的函数来创建Image类的实例。
+
+1.openImage.open(file, mode)
+
+file     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;       图像文件的全路径
+
+mode &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;打开文件的方式，默认值为r
+returns&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 一个Image对象
+
+功能：以mode为打开方式，加</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-16&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Python/">Python</a>&nbsp;
+          
+            <a href="/tags/Pillow/">Pillow</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/03/16/%E6%B3%A8%E5%86%8C%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/" target="_self">
+          <img src="/img/Google.jpg" srcset="/img/loading.gif" alt="注册谷歌账号"
+               class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/03/16/%E6%B3%A8%E5%86%8C%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/">
+        <p class="h4 index-header">注册谷歌账号</p>
+      </a>
+
+      <a href="/2020/03/16/%E6%B3%A8%E5%86%8C%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">背景
+  尝试了很多种方法注册谷歌账号，皆未成功，也参考了网上很多教程，诸如利用QQ邮箱辅助注册、在验证手机号时手动输入+86等，最后无意瞥见了网上一篇教程，安装了浏览器扩展程序，才解决了注册谷歌账号时手机号码不能验证的问题。
+
+步骤材料准备 1.下载百分浏览器(Cent Browser)，或者谷歌浏览器(Chrome)，该篇文章选用的是百分浏览器； 2.下载谷歌访问助手
+安装谷歌访问助手1.打开百分浏览器2.安装谷歌访问助手出现以下截图说明谷歌访问助手已成功安装，但只有12小时试用期，对于注册谷歌账号而言已足够，在此就不激活了。
+注册谷歌账号打开谷歌账号官网，进而下一步操作。点击 下一步 后</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-16&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/IT%E6%8A%80%E6%9C%AF/">IT技术</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="technology-nav">
-      <nav class="nav-box">
-        <section>
-          <a data-href="profile-page" data-color="pink" href="/about/">About me</a>
-          <a class="nav-item-search" data-href="memories-page" data-color="light-pink" href="javascript:;">Search</a>
-        </section>
-        <section>
-          <a data-href="history-page" data-color="light-purple" href="/gallery/">Gallery</a>
-          <a data-href="product-page" data-color="purple" href="/archives/">Archives</a>
-        </section>
-      </nav>
-      <div class="message"><h3>科幻世界</h3></div>
-    </section>
-    <div class="video-inner text-center text-white">
-      <h1 style="text-align: center">Hexo</h1>
-      <p></p>
-      <div class="brand-wapper" ><img src="/images/hexo-inverted.png" class="brand" alt="Hexo"></div>
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
   </div>
-  <div class="search-form-wrap">
-    <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
 </div>
-  </div>
+  
 
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
     </div>
     
-<script src="/js/jquery-2.0.3.min.js"></script>
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="/js/main.js" ></script>
 
 
-<script src="/js/lazyload.min.js"></script>
+  <script  src="/js/lazyload.js" ></script>
 
 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "欢迎来到我的博客&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
 
 
 
 
 
 
-<script src="/js/technology.js"></script>
 
 
-  </div>
 </body>
 </html>
