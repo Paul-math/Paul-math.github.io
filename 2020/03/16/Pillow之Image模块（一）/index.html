@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    Pillow之Image模块（一） |
+    
+    Hexo</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-Pillow之Image模块（一）" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pillow之Image模块（一）
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
+  <time datetime="2020-03-16T03:25:16.663Z" itemprop="datePublished">2020-03-16</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <h1 id="Image类属性"><a href="#Image类属性" class="headerlink" title="Image类属性"></a>Image类属性</h1><blockquote>
+<p>Image类中的属性表示了一张图像的基本信息，现将其主要属性总结如下：</p>
+</blockquote>
+<ul>
+<li><p><strong>format</strong>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图像的文件格式</p>
+</li>
+<li><p><strong>size</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;图像的大小(单位为像素)，形如(宽度，高度)的2元组</p>
+</li>
+<li><p><strong>width</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图像宽度（单位为像素）</p>
+</li>
+<li><p><strong>height</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;图像高度（单位为像素）</p>
+</li>
+<li><p><strong>mode</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   图像的模式，常见模式如下：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>图像模式</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1位像素，每个像素用8个bit表示，黑白二值图，0-黑，255-白</td>
+</tr>
+<tr>
+<td>L</td>
+<td>灰度图，每像素用8位二进制代码表示</td>
+</tr>
+<tr>
+<td>P</td>
+<td>8位彩色模式，每个像素用8位二进制代码表示， 其对应的色彩是按照调色板查询出来的</td>
+</tr>
+<tr>
+<td>RGB</td>
+<td>3*8位像素，每像素用3个二进制字节代码表示，表示真彩色图像</td>
+</tr>
+<tr>
+<td>RGBA</td>
+<td>4*8位像素，带透明蒙版的真彩色，每像素用4个字节二进制代码表示，其中的A为alpha透明度</td>
+</tr>
+<tr>
+<td>CMYK</td>
+<td>印刷模式，每个像素用4个字节二进制代码表示。C=青色；M= 品红色；Y= 黄色；K=黑色</td>
+</tr>
+<tr>
+<td>LAB</td>
+<td>Lab颜色空间，每像素用3个字节二进制代码表示</td>
+</tr>
+<tr>
+<td>YCbCr</td>
+<td>3*8位像素，彩色视频格式</td>
+</tr>
+<tr>
+<td>HSV</td>
+<td>3*8位像素，H为色相，S为饱和度，V为颜色空间</td>
+</tr>
+<tr>
+<td>I</td>
+<td>整数形式表示像素，每像素用4个字节二进制代码表示</td>
+</tr>
+<tr>
+<td>F</td>
+<td>浮点数形式表示像素，每像素用4个字节二进制代码表示</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>filename</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;图像的文件名或者路径</li>
+<li><strong>bits</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 图像的位数</li>
+<li><strong>palette</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;调色板，模式为<code>P</code> 的图像使用调色板定义每个像素的实际颜色。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/16/Pillow%E4%B9%8BImage%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/" data-id="ck7twnluv00006ou57nc6eg67"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/03/16/%E6%B3%A8%E5%86%8C%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">注册谷歌账号</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>
